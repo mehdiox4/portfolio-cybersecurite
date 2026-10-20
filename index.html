@@ -1,0 +1,511 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1424">
+  <meta name="description" content="Portfolio professionnel de Mehdi Bouazzaoui, étudiant ingénieur en cybersécurité à l'UIR. Expérience en supervision SIEM avec Wazuh, analyse de journaux et sécurité des systèmes.">
+  <title>Mehdi Bouazzaoui | Portfolio Cybersécurité</title>
+
+  <style>
+    :root {
+      --bg: #0b1424;
+      --panel: #111e32;
+      --panel-light: #17263c;
+      --text: #edf4ff;
+      --muted: #a7b6ca;
+      --blue: #69aaff;
+      --border: #293a53;
+      --green: #75dfbd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11, 20, 36, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--text);
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .brand span {
+      color: var(--blue);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .hero {
+      padding: 100px 0 80px;
+      background:
+        radial-gradient(ellipse at 85% 10%,
+        rgba(62, 127, 222, 0.17), transparent 45%);
+    }
+
+    .eyebrow {
+      color: var(--green);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 4.6rem);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin: 18px 0;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      max-width: 690px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+    }
+
+    .button-primary {
+      background: var(--blue);
+      color: #081323;
+      border-color: var(--blue);
+    }
+
+    .button-secondary {
+      color: var(--text);
+      background: var(--panel);
+    }
+
+    section {
+      padding: 65px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      color: var(--blue);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin: 8px 0 20px;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      max-width: 780px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 25px;
+      min-width: 0;
+    }
+
+    .card p, .card li {
+      color: var(--muted);
+    }
+
+    .card ul {
+      padding-left: 20px;
+      margin-top: 12px;
+    }
+
+    .card li {
+      margin-bottom: 7px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 5px 11px;
+      background: var(--panel-light);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.84rem;
+      color: var(--text);
+    }
+
+    .project {
+      border-left: 3px solid var(--blue);
+    }
+
+    .date {
+      color: var(--green);
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .note {
+      margin-top: 20px;
+      padding: 15px;
+      background: var(--panel-light);
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact-card {
+      text-align: center;
+      padding: 40px 25px;
+      background: linear-gradient(135deg, var(--panel), #152b49);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+    }
+
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 15px 0;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        letter-spacing: -1px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#accueil">MB<span>.</span> CYBER</a>
+
+      <div class="nav-links">
+        <a href="#apropos">Profil</a>
+        <a href="#projets">Projets</a>
+        <a href="#competences">Compétences</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="container">
+        <div class="eyebrow">Portfolio professionnel · Cybersécurité</div>
+
+        <h1>Mehdi <span>Bouazzaoui</span></h1>
+
+        <h2>Étudiant ingénieur en cybersécurité</h2>
+
+        <p>
+          Étudiant en 5e année à l’Université Internationale de Rabat,
+          intéressé par la supervision de la sécurité des systèmes
+          d’information, l’analyse des journaux et la détection
+          des événements de sécurité.
+        </p>
+
+        <div class="actions">
+          <a class="button button-primary" href="#projets">
+            Découvrir mon expérience
+          </a>
+
+          <a class="button button-secondary"
+             href="https://www.linkedin.com/in/mehdi-bouazzaoui-a64693236/"
+             target="_blank" rel="noopener noreferrer">
+            Mon LinkedIn ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="apropos">
+      <div class="container">
+        <div class="section-label">01 / Profil</div>
+        <h2>À propos de moi</h2>
+
+        <p class="intro">
+          Mon parcours en informatique, avec une spécialisation en
+          cybersécurité, m'a permis d'étudier la sécurité des systèmes,
+          les réseaux et les mécanismes de supervision. Lors de mon
+          stage au Haut-Commissariat au Plan, j'ai découvert les enjeux
+          liés à la collecte et à l'analyse des journaux dans un
+          environnement utilisant Wazuh SIEM.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Mon objectif</h3>
+            <p>
+              Développer mes compétences en analyse de sécurité,
+              supervision des systèmes d'information et détection
+              d'événements, dans un environnement professionnel exigeant.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Mes centres d'intérêt techniques</h3>
+            <p>
+              SIEM, analyse de logs, sécurité Linux, administration
+              réseau et compréhension des mécanismes de détection.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projets">
+      <div class="container">
+        <div class="section-label">02 / Expérience</div>
+        <h2>Projet principal : supervision SIEM avec Wazuh</h2>
+
+        <article class="card project">
+          <div class="date">2 juin – 3 juillet 2026 · Stage au HCP</div>
+
+          <h3>
+            Mise en place d'une solution SIEM pour la supervision
+            et la détection des incidents de sécurité
+          </h3>
+
+          <p>
+            Stage consacré à l'étude de la supervision de la sécurité
+            et à la compréhension du fonctionnement de Wazuh dans
+            la collecte et l'analyse des événements.
+          </p>
+
+          <h3 style="margin-top: 22px;">Travaux et sujets étudiés</h3>
+          <ul>
+            <li>Étude de l'architecture et des composants de Wazuh SIEM.</li>
+            <li>Étude de la collecte et de l'analyse des journaux système.</li>
+            <li>Déploiement et configuration d'agents Wazuh dans le cadre des travaux réalisés.</li>
+            <li>Étude des règles de détection et des alertes de sécurité.</li>
+            <li>Analyse des limites de collecte pour des applications anciennes qui ne produisent pas de journaux exploitables.</li>
+          </ul>
+
+          <h3 style="margin-top: 22px;">Enseignements</h3>
+          <p>
+            La présence d'un agent de supervision ne garantit pas
+            que toutes les activités applicatives soient visibles.
+            La qualité de la détection dépend notamment de la
+            disponibilité, de la pertinence et de l'exploitabilité
+            des journaux collectés.
+          </p>
+
+          <div class="tag-list">
+            <span class="tag">Wazuh SIEM</span>
+            <span class="tag">Analyse de logs</span>
+            <span class="tag">Linux / Ubuntu</span>
+            <span class="tag">Règles de détection</span>
+            <span class="tag">Supervision de sécurité</span>
+          </div>
+        </article>
+
+        <div class="note">
+          Ce descriptif présente les sujets et travaux de mon stage.
+          Les captures d'écran, schémas détaillés et exemples de journaux
+          ne seront ajoutés qu'après vérification de leur caractère
+          non confidentiel et, si nécessaire, obtention d'une autorisation.
+        </div>
+      </div>
+    </section>
+
+    <section id="competences">
+      <div class="container">
+        <div class="section-label">03 / Savoir-faire</div>
+        <h2>Compétences techniques</h2>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Supervision et cybersécurité</h3>
+            <ul>
+              <li>Wazuh SIEM : architecture et fonctionnement étudiés</li>
+              <li>Collecte et analyse de journaux</li>
+              <li>Étude des événements et alertes de sécurité</li>
+              <li>Compréhension des limites de détection</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Systèmes et réseaux</h3>
+            <ul>
+              <li>Linux et Ubuntu</li>
+              <li>Utilisation de SSH</li>
+              <li>Fondamentaux des réseaux informatiques</li>
+              <li>Fondamentaux de la sécurité des systèmes</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="note">
+          Les compétences listées reflètent les domaines étudiés et
+          pratiqués. Leur niveau doit pouvoir être expliqué et illustré
+          lors d'un entretien technique.
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="container">
+        <div class="section-label">04 / Formation continue</div>
+        <h2>Certification</h2>
+
+        <article class="card">
+          <h3>Cisco — Introduction to Cybersecurity</h3>
+          <div class="date">Janvier 2025</div>
+          <p>
+            Certification d'introduction aux concepts fondamentaux
+            de la cybersécurité, aux menaces et aux principes de
+            protection des systèmes et des informations.
+          </p>
+          <p style="margin-top: 12px;">
+            Organisme : Cisco Networking Academy.
+          </p>
+          <!-- Ajouter ici un lien de vérification uniquement
+               si tu disposes d'une URL officielle. -->
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div class="section-label">05 / Contact</div>
+          <h2>Échangeons</h2>
+          <p class="intro" style="margin: 0 auto;">
+            Pour toute opportunité professionnelle ou discussion
+            autour de la cybersécurité, vous pouvez me contacter
+            par email ou consulter mon profil LinkedIn.
+          </p>
+
+          <div class="actions" style="justify-content: center;">
+            <a class="button button-primary"
+               href="mailto:mehdi.bouazzaoui@uir.ac.ma">
+              Me contacter par email
+            </a>
+
+            <a class="button button-secondary"
+               href="https://www.linkedin.com/in/mehdi-bouazzaoui-a64693236/"
+               target="_blank" rel="noopener noreferrer">
+              LinkedIn ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Mehdi Bouazzaoui · Portfolio professionnel de cybersécurité
+    </div>
+  </footer>
+</body>
+</html>
